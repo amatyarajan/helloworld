@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #CCC;
+  
+}
+
+.col-25 {
+  float: left;
+  width: 20%;
+  margin-top: 6px;
+
+}
+
+
+.col-75 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 20px;
+  
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h1 align="center">User Registration</h1>
+
+
+<div class="container">
+  <form id="frm1">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"><b>Name</b></label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="gender"><b>Gender</b></label>
+      </div>
+
+      <div class="col-75">
+        <input type="radio" name="gender" value="male  "> Male
+        <input type="radio" name="gender" value="female"> Female
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="country"><b>Country</b></label>
+      </div>
+      <div class="col-75">
+        <select id="myCountry">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="nepal">Nepal</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-25">
+        <label for="country"><b>Hobbies</b></label>
+      </div>
+
+    <div class="col-75">
+    <input type="checkbox" name="hobby" value="Sports"> Sports 
+    <input type="checkbox" name="hobby" value="Party"> Party 
+    <input type="checkbox" name="hobby" value="Movie"> Movie
+      </div>
+    </div>
+
+         
+    <div class="row">
+      <div class="col-25">
+        <label for="About" ><b>About Yourself</b></label>
+      </div>
+
+      <div class="col-75">
+        <textarea id="subject" name="subject" style="height:100px"></textarea>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+<div class="container">
+  <form id="frm2">
+
+    <div class="row">
+      <div class="col-25">
+        <label for="country"><b>Education</b></label>
+      </div>
+      <div class="col-75">
+        <select id= "Education">
+          <option>     </option>
+          <option>Bachelors</option>
+          <option>Masters</option>
+          <option>PhD</option>
+        </select>
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col-25">
+        <label for="fname"><b>Email</b></label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="email">
+      </div>
+    </div>
+
+       <div class="row">
+      <div class="col-25">
+        <label for="pwd"><b>Password</b></label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="pwd">
+      </div>
+    </div>
+
+<div class="row">
+      <div class="col-25">
+        <label for="pwd"><b>Confirm Password</b></label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="con pwd">
+      </div>
+ </div>
+ <div>
+ </div>
+
+</form>
+</div>
+
+
+
+ <button class="button" onclick="myFunction()">Save </button>
+ <button class="button" onclick="clearFunction()">Cancel </button>
+ <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+ 
+ <script type="text/javascript">
+ function myFunction(){
+
+  var name= document.getElementById("fname").value
+  if(name=="null" || name=="")
+   {
+    command="Please enter your name"
+    display_name= command;
+   }  
+   else
+   {
+    display_name= name;
+   }
+  
+  var country= document.getElementById("myCountry").value
+
+  if (country=="null"|| country=="")
+  {
+     country= "Please choose your country";
+  }
+
+  var hobby = document.forms[0];
+  var txt = "";
+  var i;
+  for (i = 0; i < hobby.length; i++) {
+    if (hobby[i].checked) {
+      txt = txt +hobby[i].value + " ";
+    }
+   }
+
+ 
+  var detail= document.getElementById("subject").value
+
+  var array= txt.split(" ");
+  var sex= array[0];
+
+  if(sex=="null"|| sex=="")
+  {
+    sex= "Please select your Gender";
+  }
+
+  var hobbies_list= txt.substr(7);
+
+  if(hobbies_list=="null"|| hobbies_list=="")
+  {
+    hobbies_list= "Please select your hobbies";
+  }
+
+  
+  var detail= document.getElementById("subject").value
+  if(detail=="null"|| detail=="")
+  {
+    detail= "Please describe yourself";
+  }
+
+  var education= document.getElementById("Education").value;
+  if(education=="null"|| education=="")
+  {
+    education= "Please select your education level";
+  }
+
+  var email= document.getElementById("email").value;
+  if(email=="null"|| email=="")
+  {
+    email= "Please enter your email address";
+  }
+
+  var password= document.getElementById("pwd").value;
+  if(password=="null"|| password=="")
+  {
+    password= "Please enter your email id password";
+  }
+
+  var confirm_password= document.getElementById("con pwd").value;
+
+  if(password== confirm_password)
+  {
+    alert(
+    "Name="+  display_name+"\n" +
+    "Country="+ country + "\n"+
+    "Sex="+ sex+ "\n"+
+    "Hobbies="+ hobbies_list + "\n"+ 
+    "About="+ detail + "\n"+
+    "Education="+ education + "\n" +
+    "Email="+ email + "\n");
+  }
+  else
+  {
+    alert("Enter correct password!!");
+  }
+   
+  }
+
+  function clearFunction(){
+    document.getElementById("frm1").reset();
+    document.getElementById("frm2").reset();
+  }
+
+ </script>
+
+</body>
+</html>
