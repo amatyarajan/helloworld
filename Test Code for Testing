@@ -10,7 +10,7 @@
   background-color: #f2f2f2;
   padding: 20px;
   border: 1px solid #CCC;
-  
+
 }
 
 .col-25 {
@@ -44,7 +44,7 @@
   display: inline-block;
   font-size: 16px;
   margin: 10px 20px;
-  
+
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
@@ -61,7 +61,7 @@
 
 <body>
 
-<h1 align="center">User Registration</h1>
+<h1 align="center">User Registration Form ramaailloooo</h1>
 
 
 <div class="container">
@@ -106,13 +106,13 @@
       </div>
 
     <div class="col-75">
-    <input type="checkbox" name="hobby" value="Sports"> Sports 
-    <input type="checkbox" name="hobby" value="Party"> Party 
+    <input type="checkbox" name="hobby" value="Sports"> Sports
+    <input type="checkbox" name="hobby" value="Party"> Party
     <input type="checkbox" name="hobby" value="Movie"> Movie
       </div>
     </div>
 
-         
+
     <div class="row">
       <div class="col-25">
         <label for="About" ><b>About Yourself</b></label>
@@ -181,7 +181,7 @@
  <button class="button" onclick="myFunction()">Save </button>
  <button class="button" onclick="clearFunction()">Cancel </button>
  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
- 
+
  <script type="text/javascript">
  function myFunction(){
 
@@ -190,12 +190,12 @@
    {
     command="Please enter your name"
     display_name= command;
-   }  
+   }
    else
    {
     display_name= name;
    }
-  
+
   var country= document.getElementById("myCountry").value
 
   if (country=="null"|| country=="")
@@ -212,7 +212,7 @@
     }
    }
 
- 
+
   var detail= document.getElementById("subject").value
 
   var array= txt.split(" ");
@@ -230,7 +230,7 @@
     hobbies_list= "Please select your hobbies";
   }
 
-  
+
   var detail= document.getElementById("subject").value
   if(detail=="null"|| detail=="")
   {
@@ -263,7 +263,7 @@
     "Name="+  display_name+"\n" +
     "Country="+ country + "\n"+
     "Sex="+ sex+ "\n"+
-    "Hobbies="+ hobbies_list + "\n"+ 
+    "Hobbies="+ hobbies_list + "\n"+
     "About="+ detail + "\n"+
     "Education="+ education + "\n" +
     "Email="+ email + "\n");
@@ -272,7 +272,7 @@
   {
     alert("Enter correct password!!");
   }
-   
+
   }
 
   function clearFunction(){
